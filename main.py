@@ -6,7 +6,7 @@ This will be the main file for the CLI and all game logic.
 """
 import random
 import datetime
-from colors import print_red
+from colors import print_red, print_yellow
 
 
 def welcome_screen():
@@ -28,12 +28,15 @@ def welcome_screen():
 # Test if it works
 # print(welcome_screen())
 
+
 def dice_roll():
     """
-    dice_roll Dice rolling for players.
+    dice_roll Generates a random number between 1 - 6 for moving a peice on the board.
     
-    Generates a randum number between 1 to 6. Needed to move users' position on the grid.
+    This function will ask user to wish a number. However it will generate a random whole number between 1 -6.
     
+    :param wish: User input
+    :type wish: int
     """
     while True:
         wish = int(input("Roll the dice by pressing any number (1 - 6) that you wish to get: "))
@@ -42,6 +45,6 @@ def dice_roll():
             continue
         else:
             break
-    return wish
-# Test if it works
-# print(dice_roll())
+    return random.randint(1, 6)
+#! Test if it works
+print_yellow(f"You wish! But you got: {dice_roll()}")
