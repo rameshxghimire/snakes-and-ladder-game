@@ -7,7 +7,6 @@ This will be the main file for the CLI and all game logic.
 import random
 import datetime
 from colors import print_red
-#from snl-main import *
 
 
 def welcome_screen():
