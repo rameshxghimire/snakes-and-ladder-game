@@ -6,6 +6,7 @@ This will be the main file for the CLI and all game logic.
 """
 import random
 import datetime
+from itertools import cycle
 from colors import print_red, print_yellow
 
 
@@ -46,5 +47,21 @@ def dice_roll():
         else:
             break
     return random.randint(1, 6)
+# #! Test if it works
+# print_yellow(f"You wish! But you got: {dice_roll()}")
+
+
+def user_turns():
+    """
+    Function to determine whose turn it is to play.
+    
+    We will use cycle() from itertools to acheive this.
+    
+    """
+    current_player = cycle([players])
+    print_yellow(f"It is the user {current_player()}'s turn")
+    print_yellow("***************************************")
 #! Test if it works
-print_yellow(f"You wish! But you got: {dice_roll()}")
+players =["RG", "JH", "PG"]
+user_turns()
+
